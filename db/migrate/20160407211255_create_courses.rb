@@ -1,0 +1,17 @@
+class CreateCourses < ActiveRecord::Migration
+  def change
+    create_table :courses do |t|
+      t.text :name
+      t.text :code
+      t.text :term
+      t.integer :year
+      t.text :prerequisites
+      t.references :professor, index: true
+      t.references :faculty, index: true
+
+      t.timestamps null: false
+    end
+    add_foreign_key :courses, :professors
+    add_foreign_key :courses, :faculties
+  end
+end

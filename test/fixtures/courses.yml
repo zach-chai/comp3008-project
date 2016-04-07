@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  code: MyText
+  term: MyText
+  year: 1
+  prerequisites: MyText
+  professor_id: 
+  faculty_id: 
+
+two:
+  name: MyText
+  code: MyText
+  term: MyText
+  year: 1
+  prerequisites: MyText
+  professor_id: 
+  faculty_id: 
