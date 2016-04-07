@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :registered_courses
+
   resources :courses
 
   resources :faculties
