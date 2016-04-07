@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'course_planner#index'
+
   resources :registered_courses
 
   resources :courses
