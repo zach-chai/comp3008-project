@@ -7,7 +7,7 @@
     <tr>
       <th>User</th>
       <th>Course</th>
-      <th>Gpa</th>
+      <th>grade</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= registered_course.user %></td>
         <td><%= registered_course.course %></td>
-        <td><%= registered_course.gpa %></td>
+        <td><%= registered_course.grade %></td>
         <td><%= link_to 'Show', registered_course %></td>
         <td><%= link_to 'Edit', edit_registered_course_path(registered_course) %></td>
         <td><%= link_to 'Destroy', registered_course, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -3,7 +3,7 @@ class CreateRegisteredCourses < ActiveRecord::Migration
     create_table :registered_courses do |t|
       t.references :user, index: true
       t.references :course, index: true
-      t.decimal :gpa
+      t.float :grade
 
       t.timestamps null: false
     end

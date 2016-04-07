@@ -5,7 +5,6 @@ comp3005:
   name: Database Management Systems
   year: 2016
   term: winter
-  credit: 0.5
   prerequisites:
   professor: nel
 
@@ -14,7 +13,6 @@ comp3008:
   name: Human Computer Interaction
   year: 2016
   term: winter
-  credit: 0.5
   prerequisites:
   professor: chiasson
 
@@ -23,7 +21,6 @@ comp4004:
   name: Software Quality Assurance
   year: 2015
   term: fall
-  credit: 0.5
   prerequisites:
   professor: corriveau
 
@@ -32,6 +29,13 @@ sysc3303:
   name: Real-Time Concurrent Systems
   year: 2016
   term: winter
-  credit: 0.5
   prerequisites:
   professor: marshall
+
+comp3000:
+  code: comp3000
+  name: Operating Systems
+  year: 2015
+  term: winter
+  prerequisites:
+  professor: liu
