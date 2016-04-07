@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160407211256) do
 
   create_table "faculties", force: :cascade do |t|
     t.text     "name"
+    t.text     "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

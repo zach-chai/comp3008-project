@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyText
+comp:
+  name: Computer Science
+  code: comp
 
-two:
-  name: MyText
+sysc:
+  name: Systems Computer Engineering
+  code: sysc
+
+math:
+  name: Mathematics
+  code: math

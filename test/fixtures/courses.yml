@@ -7,6 +7,7 @@ comp3005:
   term: winter
   prerequisites:
   professor: nel
+  faculty: comp
 
 comp3008:
   code: comp3008
@@ -15,6 +16,7 @@ comp3008:
   term: winter
   prerequisites:
   professor: chiasson
+  faculty: comp
 
 comp4004:
   code: comp4004
@@ -23,6 +25,7 @@ comp4004:
   term: fall
   prerequisites:
   professor: corriveau
+  faculty: comp
 
 sysc3303:
   code: sysc3303
@@ -31,6 +34,7 @@ sysc3303:
   term: winter
   prerequisites:
   professor: marshall
+  faculty: sysc
 
 comp3000:
   code: comp3000
@@ -39,3 +43,4 @@ comp3000:
   term: winter
   prerequisites:
   professor: liu
+  faculty: comp
