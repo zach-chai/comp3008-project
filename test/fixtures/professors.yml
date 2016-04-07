@@ -1,7 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyText
+nel:
+  name: Louis Nel
 
-two:
-  name: MyText
+corriveau:
+  name: Jean-Pierre Corriveau
+
+chiasson:
+  name: Sonia Chiasson
+
+runt:
+  name: Michael Runt
+
+marshall:
+  name: Lynn Marshall

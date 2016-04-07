@@ -1,19 +1,37 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyText
-  code: MyText
-  term: MyText
-  year: 1
-  prerequisites: MyText
-  professor_id: 
-  faculty_id: 
+comp3005:
+  code: comp3005
+  name: Database Management Systems
+  year: 2016
+  term: winter
+  credit: 0.5
+  prerequisites:
+  professor: nel
 
-two:
-  name: MyText
-  code: MyText
-  term: MyText
-  year: 1
-  prerequisites: MyText
-  professor_id: 
-  faculty_id: 
+comp3008:
+  code: comp3008
+  name: Human Computer Interaction
+  year: 2016
+  term: winter
+  credit: 0.5
+  prerequisites:
+  professor: chiasson
+
+comp4004:
+  code: comp4004
+  name: Software Quality Assurance
+  year: 2015
+  term: fall
+  credit: 0.5
+  prerequisites:
+  professor: corriveau
+
+sysc3303:
+  code: sysc3303
+  name: Real-Time Concurrent Systems
+  year: 2016
+  term: winter
+  credit: 0.5
+  prerequisites:
+  professor: marshall

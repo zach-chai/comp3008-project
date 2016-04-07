@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 
-  course_id: 
+  user_id:
+  course_id:
   gpa: 9.99
 
 two:
-  user_id: 
-  course_id: 
+  user_id:
+  course_id:
   gpa: 9.99
+
+john_comp3008:
+  user: john
+  course: comp3008
