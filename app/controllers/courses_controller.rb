@@ -6,6 +6,8 @@ class CoursesController < ApplicationController
   def index
     if params[:faculty].present?
       @courses = Faculty.where(code: params[:faculty]).first.courses
+    elsif params[:user_id].present?
+      @courses = User.first.courses.where(term: params[:term]).on_day(params[:day])
     else
       @courses = Course.all
     end

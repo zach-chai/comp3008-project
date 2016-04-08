@@ -1,5 +1,11 @@
 
 $(document).on 'ready page:load', ->
+  user = ->
+    1
+
+  term = ->
+    "winter"
+
   populateFacultyList = ->
     $("#faculty-list button").remove()
     $.get "/faculties.json"
@@ -30,6 +36,15 @@ $(document).on 'ready page:load', ->
       <p>#{data.prerequisites}</p>
       "
 
+  populateDay = (day) ->
+    $.get "/courses.json?day=#{day}&user_id=#{user()}&term=#{term()}"
+    .done (data) ->
+      for course in data
+        $("##{day}").append "#{course.pretty_start_time} #{course.pretty_end_time} #{course.name}"
+
+  populateSchedule = ->
+
+
   $("#faculty-list").on "click", "button", ->
     faculty = $(this).data 'faculty'
     populateCourseList faculty
@@ -40,3 +55,4 @@ $(document).on 'ready page:load', ->
 
   populateFacultyList()
   populateCourseList()
+  populateSchedule()

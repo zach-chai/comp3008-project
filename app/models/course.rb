@@ -4,7 +4,7 @@ class Course < ActiveRecord::Base
   has_many :registered_courses
   has_many :users, through: :registered_courses
 
-  def pretty_time time
+  def pretty_time(time)
     time.strftime "%l:%M"
   rescue
     nil
@@ -16,5 +16,9 @@ class Course < ActiveRecord::Base
 
   def pretty_end_time
     pretty_time end_time
+  end
+
+  def self.on_day(day)
+    where 'day like (?)', "%#{day}%"
   end
 end
