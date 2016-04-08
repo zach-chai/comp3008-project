@@ -42,7 +42,7 @@ $(document).on 'ready page:load', ->
     .done (data) ->
       for course in data
         if course.conflict
-          $("##{day}").append "<p class=\"course label-danger\" data-id=\"#{course.id}\">#{course.pretty_start_time} #{course.pretty_end_time} #{course.name}</p>"
+          $("##{day}").append "<p class=\"course text-danger\" data-id=\"#{course.id}\">#{course.pretty_start_time} #{course.pretty_end_time} #{course.name}</p>"
         else
           $("##{day}").append "<p class=\"course\" data-id=\"#{course.id}\">#{course.pretty_start_time} #{course.pretty_end_time} #{course.name}</p>"
 

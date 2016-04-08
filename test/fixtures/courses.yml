@@ -7,8 +7,8 @@ comp3005:
   term: winter
   required: true
   day: wednesday friday
-  start_time: "2:35"
-  end_time: "3:55"
+  start_time: "14:35"
+  end_time: "15:55"
   prerequisites:
   professor: nel
   faculty: comp
@@ -20,8 +20,8 @@ comp3008:
   term: winter
   required: true
   day: tuesday thursday
-  start_time: "1:05"
-  end_time: "2:25"
+  start_time: "13:05"
+  end_time: "14:25"
   prerequisites:
   professor: chiasson
   faculty: comp
@@ -99,7 +99,7 @@ busi2204:
   required: false
   day: wednesday
   start_time: "11:35"
-  end_time: "2:25"
+  end_time: "14:25"
   prerequisites:
   professor: doha
   faculty: busi

@@ -6,6 +6,7 @@ end
 
 json.pretty_start_time @course.pretty_start_time
 json.pretty_end_time @course.pretty_end_time
+json.conflict course.conflict @day
 
 json.audit do
   json.in_progress @course.registered_courses.first.present?
