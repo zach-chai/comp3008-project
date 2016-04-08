@@ -160,6 +160,20 @@ comp3004:
   prerequisites:
   faculty: comp
 
+comp3007:
+  code: comp3007
+  name: Programming Paradigms
+  required: true
+  prerequisites:
+  faculty: comp
+
+comp3804:
+  code: comp3804
+  name: Design and Analysis of Algorithms
+  required: true
+  prerequisites:
+  faculty: comp
+
 math1007:
   code: math1007
   name: Elementary Calculus I

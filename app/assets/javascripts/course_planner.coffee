@@ -51,6 +51,18 @@ $(document).on 'ready page:load', ->
     populateDay "thursday"
     populateDay "friday"
 
+  populateAuditList = ->
+    $.get "/courses.json?audit=true"
+    .done (data) ->
+      $("#audit-list button").remove()
+      for course in data
+        if course.audit.completed
+          $("#audit-list").append "<li class=\"list-group-item list-group-item-success\">#{course.name}</li>"
+        else if course.audit.in_progress
+          $("#audit-list").append "<li class=\"list-group-item list-group-item-warning\">#{course.name}</li>"
+        else
+          $("#audit-list").append "<li class=\"list-group-item\">#{course.name}</li>"
+
   $("#faculty-list").on "click", "button", ->
     faculty = $(this).data 'faculty'
     populateCourseList faculty
@@ -84,3 +96,4 @@ $(document).on 'ready page:load', ->
   populateFacultyList()
   populateCourseList()
   populateSchedule()
+  populateAuditList()

@@ -10,5 +10,12 @@ json.array!(@courses) do |course|
   json.pretty_start_time course.pretty_start_time
   json.pretty_end_time course.pretty_end_time
 
+  json.audit do
+    json.in_progress course.registered_courses.first.present?
+    if course.registered_courses.first.present?
+      json.completed course.registered_courses.first.grade.present?
+    end
+  end
+
   json.url course_url(course, format: :json)
 end

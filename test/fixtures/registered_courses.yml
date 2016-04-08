@@ -7,14 +7,66 @@ john_comp3008:
 john_comp4004:
   user: john
   course: comp4004
-  grade: 5
 
 john_comp3000:
   user: john
   course: comp3000
-  grade: 4.5
 
 john_sysc3303:
   user: john
   course: sysc3303
-  
+
+john_comp1405:
+  user: john
+  course: comp1405
+  grade: 5.5
+
+john_comp1406:
+  user: john
+  course: comp1406
+  grade: 6
+
+john_comp1805:
+  user: john
+  course: comp1805
+  grade: 4.5
+
+john_comp2804:
+  user: john
+  course: comp2804
+  grade: 4
+
+john_comp2401:
+  user: john
+  course: comp2401
+  grade: 5.5
+
+john_comp2402:
+  user: john
+  course: comp2402
+  grade: 5
+
+john_comp2404:
+  user: john
+  course: comp2404
+  grade: 5
+
+john_comp3004:
+  user: john
+  course: comp3004
+  grade: 4.5
+
+john_comp3007:
+  user: john
+  course: comp3007
+  grade: 6
+
+john_comp3804:
+  user: john
+  course: comp3804
+  grade: 3.5
+
+john_math1007:
+  user: john
+  course: math1007
+  grade: 4
