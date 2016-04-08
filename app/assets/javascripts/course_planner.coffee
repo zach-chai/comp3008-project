@@ -57,7 +57,7 @@ $(document).on 'ready page:load', ->
   populateAuditList = ->
     $.get "/courses.json?audit=true"
     .done (data) ->
-      $("#audit-list button").remove()
+      $("#audit-list li").remove()
       for course in data
         if course.audit.completed
           $("#audit-list").append "<li class=\"list-group-item list-group-item-success\">#{course.name}</li>"
