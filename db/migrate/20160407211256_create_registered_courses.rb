@@ -9,5 +9,6 @@ class CreateRegisteredCourses < ActiveRecord::Migration
     end
     add_foreign_key :registered_courses, :users
     add_foreign_key :registered_courses, :courses
+    add_index :registered_courses, [:user_id, :course_id]
   end
 end

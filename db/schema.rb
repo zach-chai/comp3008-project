@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160407211256) do
   end
 
   add_index "registered_courses", ["course_id"], name: "index_registered_courses_on_course_id"
+  add_index "registered_courses", ["user_id", "course_id"], name: "index_registered_courses_on_user_id_and_course_id"
   add_index "registered_courses", ["user_id"], name: "index_registered_courses_on_user_id"
 
   create_table "users", force: :cascade do |t|

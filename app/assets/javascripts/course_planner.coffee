@@ -44,9 +44,10 @@ $(document).on 'ready page:load', ->
         $("##{day}").append "<p class=\"course\" data-id=\"#{course.id}\">#{course.pretty_start_time} #{course.pretty_end_time} #{course.name}</p>"
 
   populateSchedule = ->
+    $("#schedule p").remove()
     populateDay "monday"
     populateDay "tuesday"
-    populateDay "Wednesday"
+    populateDay "wednesday"
     populateDay "thursday"
     populateDay "friday"
 
@@ -65,11 +66,10 @@ $(document).on 'ready page:load', ->
         course_id: course
       }
     }
-    console.log data
     $.post '/registered_courses.json',
       data
     .done ->
-      alert "success"
+      populateSchedule()
 
   $("#schedule").on "click", "p", ->
     course = $(this).data 'id'
@@ -79,7 +79,7 @@ $(document).on 'ready page:load', ->
       data:
         course_id: course
       success: ->
-          alert "success"
+          populateSchedule()
 
   populateFacultyList()
   populateCourseList()
