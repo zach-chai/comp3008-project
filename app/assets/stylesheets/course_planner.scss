@@ -1,4 +1,20 @@
 #course-list {
-  height:400px;
+  height:320px;
+  overflow-y:auto;
+}
+
+#schedule {
+  height: 320px;
+  p {
+    cursor:pointer;
+  }
+  p:hover {
+    background-color: #F5F5F5;
+    text-decoration: line-through;
+  }
+}
+
+#audit-list {
+  height:700px;
   overflow-y:auto;
 }

@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
     if params[:faculty].present?
       @courses = Faculty.where(code: params[:faculty]).first.courses
     elsif params[:user_id].present?
-      @courses = User.first.courses.on_day(params[:day])
+      @courses = User.first.courses.on_day(params[:day]).order "start_time desc"
       @day = params[:day]
     elsif params[:audit].present?
       @courses = Course.where(required: true)

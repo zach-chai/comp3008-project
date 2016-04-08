@@ -11,7 +11,7 @@ $(document).on 'ready page:load', ->
     .done (data) ->
       $("#faculty-list button").remove()
       for faculty in data
-        $("#faculty-list").append "<button type=\"button\" class=\"list-group-item\" data-faculty=\"#{faculty.code}\">#{faculty.name}</button>"
+        $("#faculty-list").append "<button type=\"button\" class=\"list-group-item\" data-faculty=\"#{faculty.code}\">#{faculty.name} (#{faculty.code.toUpperCase()})</button>"
 
   populateCourseList = (faculty) ->
     param = ""
@@ -21,7 +21,10 @@ $(document).on 'ready page:load', ->
     .done (data) ->
       $("#course-list button").remove()
       for course in data
-        $("#course-list").append "<button type=\"button\" class=\"list-group-item\" data-id=\"#{course.id}\" data-code=\"#{course.code}\">#{course.name}</button>"
+        if course.audit.in_progress
+          $("#course-list").append "<button type=\"button\" class=\"list-group-item list-group-item-warning\" data-id=\"#{course.id}\" data-code=\"#{course.code}\">#{course.name} (#{course.code.toUpperCase()})</button>"
+        else
+          $("#course-list").append "<button type=\"button\" class=\"list-group-item\" data-id=\"#{course.id}\" data-code=\"#{course.code}\">#{course.name} (#{course.code.toUpperCase()})</button>"
 
   populateCourseInfo = (course) ->
     $.get "/courses/#{course}.json"
@@ -29,11 +32,12 @@ $(document).on 'ready page:load', ->
       $("#course-info p, #course-info-container .panel-footer").remove()
       $("#course-info").append "
         <p>#{data.name}</p>
-        <p>#{data.code}</p>
+        <p>#{data.code.toUpperCase()}</p>
         <p>#{data.professor.name}</p>
         <p>#{data.day}</p>
         <p>#{data.pretty_start_time} #{data.pretty_end_time}</p>
         <p>#{data.prerequisites}</p>
+        <p>Credits 0.5</p>
       "
       $("#course-info-container").append "<div class=\"panel-footer\"><button type=\"button\" class=\"btn btn-default\" data-course-id=\"#{data.id}\">Add to Schedule</button></div>"
 
@@ -60,11 +64,11 @@ $(document).on 'ready page:load', ->
       $("#audit-list li").remove()
       for course in data
         if course.audit.completed
-          $("#audit-list").append "<li class=\"list-group-item list-group-item-success\">#{course.name}</li>"
+          $("#audit-list").append "<li class=\"list-group-item list-group-item-success\">#{course.name} (#{course.code.toUpperCase()})</li>"
         else if course.audit.in_progress
-          $("#audit-list").append "<li class=\"list-group-item list-group-item-warning\">#{course.name}</li>"
+          $("#audit-list").append "<li class=\"list-group-item list-group-item-warning\">#{course.name} (#{course.code.toUpperCase()})</li>"
         else
-          $("#audit-list").append "<li class=\"list-group-item\">#{course.name}</li>"
+          $("#audit-list").append "<li class=\"list-group-item\">#{course.name} (#{course.code.toUpperCase()})</li>"
     $.get "/users.json"
     .done (data) ->
       $("#audit .panel-heading").html "<span>Audit</span> <span style=\"float:right;\" class=\"badge\">Credits #{data[0].credits}</span>"
@@ -99,6 +103,7 @@ $(document).on 'ready page:load', ->
         course_id: course
       success: ->
           populateSchedule()
+          populateCourseList()
           populateAuditList()
 
   populateFacultyList()
