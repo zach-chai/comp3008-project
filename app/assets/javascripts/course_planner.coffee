@@ -16,8 +16,8 @@ $(document).on 'ready page:load', ->
   populateCourseList = (faculty) ->
     param = ""
     if faculty
-      param = "?faculty=#{faculty}"
-    $.get "/courses.json#{param}"
+      param = "&faculty=#{faculty}"
+    $.get "/courses.json?term=#{term()}#{param}"
     .done (data) ->
       $("#course-list button").remove()
       for course in data

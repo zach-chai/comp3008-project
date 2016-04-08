@@ -11,3 +11,7 @@ sysc:
 math:
   name: Mathematics
   code: math
+
+busi:
+  name: Business
+  code: busi

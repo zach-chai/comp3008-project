@@ -7,9 +7,13 @@ class CoursesController < ApplicationController
     if params[:faculty].present?
       @courses = Faculty.where(code: params[:faculty]).first.courses
     elsif params[:user_id].present?
-      @courses = User.first.courses.where(term: params[:term]).on_day(params[:day])
+      @courses = User.first.courses.on_day(params[:day])
     else
       @courses = Course.all
+    end
+
+    if params[:term]
+      @courses = @courses.where(term: params[:term])
     end
   end
 

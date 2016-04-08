@@ -5,6 +5,7 @@ comp3005:
   name: Database Management Systems
   year: 2016
   term: winter
+  required: true
   day: wednesday friday
   start_time: "2:35"
   end_time: "3:55"
@@ -17,6 +18,7 @@ comp3008:
   name: Human Computer Interaction
   year: 2016
   term: winter
+  required: true
   day: tuesday thursday
   start_time: "1:05"
   end_time: "2:25"
@@ -27,9 +29,10 @@ comp3008:
 comp4004:
   code: comp4004
   name: Software Quality Assurance
-  year: 2015
-  term: fall
-  day: Monday Wednesday
+  year: 2016
+  term: winter
+  required: true
+  day: monday wednesday
   start_time: "8:35"
   end_time: "9:55"
   prerequisites:
@@ -41,6 +44,7 @@ sysc3303:
   name: Real-Time Concurrent Systems
   year: 2016
   term: winter
+  required: true
   day: monday wednesday
   start_time: "11:35"
   end_time: "12:55"
@@ -51,11 +55,114 @@ sysc3303:
 comp3000:
   code: comp3000
   name: Operating Systems
-  year: 2015
-  term: fall
+  year: 2016
+  term: winter
+  required: true
   day: wednesday friday
   start_time:
   end_time:
   prerequisites:
   professor: liu
   faculty: comp
+
+sysc4106:
+  code: sysc4106
+  name: Software Product Management
+  year: 2016
+  term: winter
+  required: true
+  day: tuesday
+  start_time: "6:05"
+  end_time: "8:55"
+  prerequisites:
+  professor: leduc
+  faculty: sysc
+
+busi2301:
+  code: busi2301
+  name: Intro to Operations Management
+  year: 2016
+  term: winter
+  required: false
+  day: thursday
+  start_time: "8:35"
+  end_time: "11:25"
+  prerequisites:
+  professor: doha
+  faculty: busi
+
+busi2204:
+  code: busi2204
+  name: Basic Marketing
+  year: 2016
+  term: winter
+  required: false
+  day: wednesday
+  start_time: "11:35"
+  end_time: "2:25"
+  prerequisites:
+  professor: doha
+  faculty: busi
+
+comp1405:
+  code: comp1405
+  name: Intro to Computer Science I
+  required: true
+  prerequisites:
+  faculty: comp
+
+comp1406:
+  code: comp1406
+  name: Intro to Computer Science II
+  required: true
+  prerequisites:
+  faculty: comp
+
+comp1805:
+  code: comp1805
+  name: Discrete Structures I
+  required: true
+  prerequisites:
+  faculty: comp
+
+comp2804:
+  code: comp2804
+  name: Discrete Structures II
+  required: true
+  prerequisites:
+  faculty: comp
+
+comp2401:
+  code: comp2401
+  name: Intro to Systems Programming
+  required: true
+  prerequisites:
+  faculty: comp
+
+comp2402:
+  code: comp2402
+  name: Abstract Data Types and Algorithms
+  required: true
+  prerequisites:
+  faculty: comp
+
+comp2404:
+  code: comp2404
+  name: Intro to Software Engineering
+  required: true
+  prerequisites:
+  faculty: comp
+
+comp3004:
+  code: comp3004
+  name: Object-Oriented Software Engineering
+  required: true
+  prerequisites:
+  faculty: comp
+
+math1007:
+  code: math1007
+  name: Elementary Calculus I
+  required: true
+  prerequisites:
+  faculty: math
