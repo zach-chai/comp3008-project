@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   end
 
   def credits
-    registered_courses.where.not(grade: nil).count / 2
+    registered_courses.where.not(grade: nil).count / 2.0
   end
 end

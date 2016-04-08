@@ -65,6 +65,9 @@ $(document).on 'ready page:load', ->
           $("#audit-list").append "<li class=\"list-group-item list-group-item-warning\">#{course.name}</li>"
         else
           $("#audit-list").append "<li class=\"list-group-item\">#{course.name}</li>"
+    $.get "/users.json"
+    .done (data) ->
+      $("#audit .panel-heading").html "<span>Audit</span> <span style=\"float:right;\" class=\"badge\">Credits #{data[0].credits}</span>"
 
   $("#faculty-list").on "click", "button", ->
     faculty = $(this).data 'faculty'
