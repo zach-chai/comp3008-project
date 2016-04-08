@@ -18,14 +18,15 @@ ActiveRecord::Schema.define(version: 20160407211256) do
     t.text     "code"
     t.text     "term"
     t.integer  "year"
+    t.boolean  "required",      default: false
     t.text     "day"
     t.time     "start_time"
     t.time     "end_time"
     t.text     "prerequisites"
     t.integer  "professor_id"
     t.integer  "faculty_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "courses", ["faculty_id"], name: "index_courses_on_faculty_id"

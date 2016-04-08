@@ -7,26 +7,26 @@ $(document).on 'ready page:load', ->
     "winter"
 
   populateFacultyList = ->
-    $("#faculty-list button").remove()
     $.get "/faculties.json"
     .done (data) ->
+      $("#faculty-list button").remove()
       for faculty in data
         $("#faculty-list").append "<button type=\"button\" class=\"list-group-item\" data-faculty=\"#{faculty.code}\">#{faculty.name}</button>"
 
   populateCourseList = (faculty) ->
-    $("#course-list button").remove()
     param = ""
     if faculty
       param = "?faculty=#{faculty}"
     $.get "/courses.json#{param}"
     .done (data) ->
+      $("#course-list button").remove()
       for course in data
         $("#course-list").append "<button type=\"button\" class=\"list-group-item\" data-id=\"#{course.id}\" data-code=\"#{course.code}\">#{course.name}</button>"
 
   populateCourseInfo = (course) ->
-    $("#course-info p").remove()
     $.get "/courses/#{course}.json"
     .done (data) ->
+      $("#course-info p, #course-info-container .panel-footer").remove()
       $("#course-info").append "
         <p>#{data.name}</p>
         <p>#{data.code}</p>
@@ -35,7 +35,7 @@ $(document).on 'ready page:load', ->
         <p>#{data.pretty_start_time} #{data.pretty_end_time}</p>
         <p>#{data.prerequisites}</p>
       "
-      $("#course-info-container").append "<div class=\"panel-footer\"><button type=\"button\" class=\"btn btn-default\" data-course-id=\"#{data.id}\">Add</button></div>"
+      $("#course-info-container").append "<div class=\"panel-footer\"><button type=\"button\" class=\"btn btn-default\" data-course-id=\"#{data.id}\">Add to Schedule</button></div>"
 
   populateDay = (day) ->
     $.get "/courses.json?day=#{day}&user_id=#{user()}&term=#{term()}"

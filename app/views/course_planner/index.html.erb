@@ -1,31 +1,52 @@
-<div class="container">
-  <div id="course-selection" class="panel panel-default">
-    <div class="panel-heading">Course Selector</div>
-    <div class="panel-body">
-      <div id="faculty-list" class="list-group">
-        <button type="button" class="list-group-item" data-faculty="comp">Cras justo odio</button>
+<div class="container-fluid">
+  <div class="row">
+    <div id="course-selection" class="panel panel-default col-md-8">
+      <div class="panel-heading">Course Selector</div>
+      <div class="panel-body">
+        <div class="row">
+          <div id="faculty-list" class="list-group col-md-6">
+            <button type="button" class="list-group-item" data-faculty="comp">Cras justo odio</button>
+          </div>
+          <div id="course-list" class="list-group col-md-6">
+          </div>
+        </div>
       </div>
-      <div id="course-list" class="list-group">
+    </div>
+
+    <div id="course-info-container" class="panel panel-default col-md-4">
+      <div class="panel-heading">Course Info</div>
+      <div id="course-info" class="panel-body">
       </div>
     </div>
   </div>
 
-  <div id="course-info-container" class="panel panel-default">
-    <div class="panel-heading">Course Info</div>
-    <div id="course-info" class="panel-body">
-    </div>
-  </div>
-
-  <div id="schedule" class="panel panel-default">
-    <div id="monday" class="panel panel-default">
-    </div>
-    <div id="tuesday" class="panel panel-default">
-    </div>
-    <div id="wednesday" class="panel panel-default">
-    </div>
-    <div id="thursday" class="panel panel-default">
-    </div>
-    <div id="friday" class="panel panel-default">
+  <div class="row">
+    <div id="schedule" class="panel panel-default">
+      <div class="panel panel-default col-md-2">
+        <div class="panel-heading">Monday</div>
+        <div id="monday" class="panel-body">
+        </div>
+      </div>
+      <div class="panel panel-default col-md-2">
+        <div class="panel-heading">Tuesday</div>
+        <div id="tuesday" class="panel-body">
+        </div>
+      </div>
+      <div class="panel panel-default col-md-2">
+        <div class="panel-heading">Wednesday</div>
+        <div id="wednesday" class="panel-body">
+        </div>
+      </div>
+      <div class="panel panel-default col-md-2">
+        <div class="panel-heading">Thursday</div>
+        <div id="thursday" class="panel-body">
+        </div>
+      </div>
+      <div class="panel panel-default col-md-2">
+        <div class="panel-heading">Friday</div>
+        <div id="friday" class="panel-body">
+        </div>
+      </div>
     </div>
   </div>
 

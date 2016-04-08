@@ -5,6 +5,7 @@ class CreateCourses < ActiveRecord::Migration
       t.text :code
       t.text :term
       t.integer :year
+      t.boolean :required, default: false
       t.text :day
       t.time :start_time
       t.time :end_time
