@@ -5,6 +5,9 @@ class CreateCourses < ActiveRecord::Migration
       t.text :code
       t.text :term
       t.integer :year
+      t.text :day
+      t.time :start_time
+      t.time :end_time
       t.text :prerequisites
       t.references :professor, index: true
       t.references :faculty, index: true

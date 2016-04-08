@@ -5,6 +5,9 @@ comp3005:
   name: Database Management Systems
   year: 2016
   term: winter
+  day: wednesday friday
+  start_time: "2:35"
+  end_time: "3:55"
   prerequisites:
   professor: nel
   faculty: comp
@@ -14,6 +17,9 @@ comp3008:
   name: Human Computer Interaction
   year: 2016
   term: winter
+  day: tuesday thursday
+  start_time: "1:05"
+  end_time: "2:25"
   prerequisites:
   professor: chiasson
   faculty: comp
@@ -23,6 +29,9 @@ comp4004:
   name: Software Quality Assurance
   year: 2015
   term: fall
+  day: Monday Wednesday
+  start_time: "8:35"
+  end_time: "9:55"
   prerequisites:
   professor: corriveau
   faculty: comp
@@ -32,6 +41,9 @@ sysc3303:
   name: Real-Time Concurrent Systems
   year: 2016
   term: winter
+  day: monday wednesday
+  start_time: "11:35"
+  end_time: "12:55"
   prerequisites:
   professor: marshall
   faculty: sysc
@@ -40,7 +52,10 @@ comp3000:
   code: comp3000
   name: Operating Systems
   year: 2015
-  term: winter
+  term: fall
+  day: wednesday friday
+  start_time:
+  end_time:
   prerequisites:
   professor: liu
   faculty: comp
