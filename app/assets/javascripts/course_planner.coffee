@@ -30,6 +30,12 @@ $(document).on 'ready page:load', ->
     $.get "/courses/#{course}.json"
     .done (data) ->
       $("#course-info p, #course-info-container .panel-footer").remove()
+      if data.audit.in_progress
+        $("#course-info-container .panel-heading").html "Course Info <span style=\"float:right;\" class=\"label label-warning\">Registered</span>"
+      else if data.audit.completed
+        $("#course-info-container .panel-heading").html "Course Info <span style=\"float:right;\" class=\"label label-success\">Completed</span>"
+      else
+        $("#course-info-container .panel-heading").html "Course Info"
       $("#course-info").append "
         <p>#{data.name}</p>
         <p>#{data.code.toUpperCase()}</p>
@@ -39,7 +45,7 @@ $(document).on 'ready page:load', ->
         <p>#{data.prerequisites}</p>
         <p>Credits 0.5</p>
       "
-      $("#course-info-container").append "<div class=\"panel-footer\"><button type=\"button\" class=\"btn btn-default\" data-course-id=\"#{data.id}\">Add to Schedule</button></div>"
+      $("#course-info-container .panel").append "<div class=\"panel-footer\"><button type=\"button\" class=\"btn btn-default\" data-course-id=\"#{data.id}\">Add to Schedule</button></div>"
 
   populateDay = (day) ->
     $.get "/courses.json?day=#{day}&user_id=#{user()}&term=#{term()}"
@@ -90,9 +96,11 @@ $(document).on 'ready page:load', ->
     }
     $.post '/registered_courses.json',
       data
-    .done ->
+    .done (data) ->
       populateSchedule()
+      populateCourseList()
       populateAuditList()
+      populateCourseInfo(data.course_id)
 
   $("#schedule").on "click", "p", ->
     course = $(this).data 'id'
@@ -105,6 +113,7 @@ $(document).on 'ready page:load', ->
           populateSchedule()
           populateCourseList()
           populateAuditList()
+
 
   populateFacultyList()
   populateCourseList()
