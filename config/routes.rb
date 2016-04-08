@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'course_planner#index'
 
+  delete 'deregister_course' => 'registered_courses#destroy_by_course'
+
   resources :registered_courses
 
   resources :courses

@@ -26,6 +26,9 @@ class RegisteredCoursesController < ApplicationController
   def create
     @registered_course = RegisteredCourse.new(registered_course_params)
 
+    # hack for single user
+    @registered_course.user_id = User.first.id
+
     respond_to do |format|
       if @registered_course.save
         format.html { redirect_to @registered_course, notice: 'Registered course was successfully created.' }
@@ -55,6 +58,14 @@ class RegisteredCoursesController < ApplicationController
   # DELETE /registered_courses/1.json
   def destroy
     @registered_course.destroy
+    respond_to do |format|
+      format.html { redirect_to registered_courses_url, notice: 'Registered course was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def destroy_by_course
+    Course.find(params[:course_id]).registered_courses.first.destroy
     respond_to do |format|
       format.html { redirect_to registered_courses_url, notice: 'Registered course was successfully destroyed.' }
       format.json { head :no_content }
