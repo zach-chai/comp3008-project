@@ -21,4 +21,17 @@ class Course < ActiveRecord::Base
   def self.on_day(day)
     where 'day like (?)', "%#{day}%"
   end
+
+  def conflict
+    User.first.courses.where(term: "winter").each do |course|
+      puts course.start_time
+      puts end_time
+      puts start_time
+      puts "new"
+      if course.start_time < end_time && course.start_time > start_time
+        return true
+      end
+    end
+    false
+  end
 end

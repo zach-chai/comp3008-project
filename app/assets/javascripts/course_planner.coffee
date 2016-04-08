@@ -41,7 +41,10 @@ $(document).on 'ready page:load', ->
     $.get "/courses.json?day=#{day}&user_id=#{user()}&term=#{term()}"
     .done (data) ->
       for course in data
-        $("##{day}").append "<p class=\"course\" data-id=\"#{course.id}\">#{course.pretty_start_time} #{course.pretty_end_time} #{course.name}</p>"
+        if course.conflict
+          $("##{day}").append "<p class=\"course label-danger\" data-id=\"#{course.id}\">#{course.pretty_start_time} #{course.pretty_end_time} #{course.name}</p>"
+        else
+          $("##{day}").append "<p class=\"course\" data-id=\"#{course.id}\">#{course.pretty_start_time} #{course.pretty_end_time} #{course.name}</p>"
 
   populateSchedule = ->
     $("#schedule p").remove()
@@ -82,6 +85,7 @@ $(document).on 'ready page:load', ->
       data
     .done ->
       populateSchedule()
+      populateAuditList()
 
   $("#schedule").on "click", "p", ->
     course = $(this).data 'id'
@@ -92,6 +96,7 @@ $(document).on 'ready page:load', ->
         course_id: course
       success: ->
           populateSchedule()
+          populateAuditList()
 
   populateFacultyList()
   populateCourseList()
