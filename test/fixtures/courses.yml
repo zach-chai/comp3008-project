@@ -107,8 +107,14 @@ busi2204:
 comp1405:
   code: comp1405
   name: Intro to Computer Science I
+  year: 2016
+  term: winter
   required: true
+  day: monday wednesday
+  start_time: "11:35"
+  end_time: "14:25"
   prerequisites:
+  professor: nel
   faculty: comp
 
 comp1406:
@@ -170,6 +176,27 @@ comp3007:
 comp3804:
   code: comp3804
   name: Design and Analysis of Algorithms
+  required: true
+  prerequisites:
+  faculty: comp
+
+comp4000:
+  code: comp4000
+  name: Distributed Operating Systems
+  required: true
+  prerequisites:
+  faculty: comp
+
+comp4905:
+  code: comp4905
+  name: Honours Project
+  required: true
+  prerequisites:
+  faculty: comp
+
+comp2406:
+  code: comp2406
+  name: Fundamentals of Web Applications
   required: true
   prerequisites:
   faculty: comp

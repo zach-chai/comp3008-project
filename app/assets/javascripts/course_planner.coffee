@@ -21,7 +21,9 @@ $(document).on 'ready page:load', ->
     .done (data) ->
       $("#course-list button").remove()
       for course in data
-        if course.audit.in_progress
+        if course.audit.completed
+          $("#course-list").append "<button type=\"button\" class=\"list-group-item list-group-item-success\" data-id=\"#{course.id}\" data-code=\"#{course.code}\">#{course.name} (#{course.code.toUpperCase()})</button>"
+        else if course.audit.in_progress
           $("#course-list").append "<button type=\"button\" class=\"list-group-item list-group-item-warning\" data-id=\"#{course.id}\" data-code=\"#{course.code}\">#{course.name} (#{course.code.toUpperCase()})</button>"
         else
           $("#course-list").append "<button type=\"button\" class=\"list-group-item\" data-id=\"#{course.id}\" data-code=\"#{course.code}\">#{course.name} (#{course.code.toUpperCase()})</button>"
@@ -30,10 +32,10 @@ $(document).on 'ready page:load', ->
     $.get "/courses/#{course}.json"
     .done (data) ->
       $("#course-info p, #course-info-container .panel-footer").remove()
-      if data.audit.in_progress
-        $("#course-info-container .panel-heading").html "Course Info <span style=\"float:right;\" class=\"label label-warning\">Registered</span>"
-      else if data.audit.completed
+      if data.audit.completed
         $("#course-info-container .panel-heading").html "Course Info <span style=\"float:right;\" class=\"label label-success\">Completed</span>"
+      else if data.audit.in_progress
+        $("#course-info-container .panel-heading").html "Course Info <span style=\"float:right;\" class=\"label label-warning\">Registered</span>"
       else
         $("#course-info-container .panel-heading").html "Course Info"
       $("#course-info").append "

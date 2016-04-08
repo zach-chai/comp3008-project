@@ -51,6 +51,11 @@ john_comp2404:
   course: comp2404
   grade: 5
 
+john_comp2406:
+  user: john
+  course: comp2406
+  grade: 5.5
+
 john_comp3004:
   user: john
   course: comp3004
