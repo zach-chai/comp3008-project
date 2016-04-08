@@ -72,8 +72,8 @@ sysc4106:
   term: winter
   required: true
   day: tuesday
-  start_time: "6:05"
-  end_time: "8:55"
+  start_time: "18:05"
+  end_time: "20:55"
   prerequisites:
   professor: leduc
   faculty: sysc
